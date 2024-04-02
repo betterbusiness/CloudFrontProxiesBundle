@@ -3,7 +3,7 @@
     "description": "Trusts the AWS Cloudfront proxies IP in your Symfony projects",
     "type": "symfony-bundle",
     "require": {
-        "symfony/framework-bundle": "^4.4.0 || ^5.0",
+        "symfony/framework-bundle": "^4.4.0 || ^5.0 || ^6.0 || ^7.0",
         "symfony/http-client": "^4.4.0 || ^5.0"
     },
     "require-dev": {
