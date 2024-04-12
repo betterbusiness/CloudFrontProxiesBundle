@@ -12,7 +12,7 @@ class Configuration implements ConfigurationInterface
      *
      * @return TreeBuilder
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('erichard_cloudfront_proxies');
         // BC layer for symfony/config < 4.2
