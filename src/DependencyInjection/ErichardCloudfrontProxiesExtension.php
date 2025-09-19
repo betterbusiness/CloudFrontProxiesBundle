@@ -6,9 +6,9 @@ use Erichard\CloudfrontProxiesBundle\EventSubscriber\TrustCloudFrontProxiesSubsc
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class ErichardCloudfrontProxiesExtension extends Extension
 {
