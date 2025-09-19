@@ -26,7 +26,7 @@ class TrustCloudFrontProxiesSubscriber implements EventSubscriberInterface
         $this->expire = $expire;
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             KernelEvents::REQUEST => [
@@ -35,7 +35,7 @@ class TrustCloudFrontProxiesSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function trustProxies(RequestEvent $event)
+    public function trustProxies(RequestEvent $event): void
     {
         if (!$event->isMainRequest()) {
             return;
@@ -49,7 +49,7 @@ class TrustCloudFrontProxiesSubscriber implements EventSubscriberInterface
         }
     }
 
-    protected function loadTrustedProxies($request)
+    protected function loadTrustedProxies($request): void
     {
         // Get the CloudFront IP addresses
         $proxies = $this->cache->get('cloudfront-proxy-ip-addresses', function (ItemInterface $item) {
@@ -70,7 +70,7 @@ class TrustCloudFrontProxiesSubscriber implements EventSubscriberInterface
         Request::setTrustedProxies(array_merge(Request::getTrustedProxies(), $proxies), Request::getTrustedHeaderSet());
     }
 
-    protected function setCloudfrontHeaders(Request $request) 
+    protected function setCloudfrontHeaders(Request $request): void
     {
         $request->headers->set('x-forwarded-proto', $request->headers->get('cloudfront-forwarded-proto'));
     }

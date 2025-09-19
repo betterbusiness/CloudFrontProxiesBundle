@@ -20,7 +20,7 @@ class ErichardCloudfrontProxiesExtension extends Extension
      *
      * @throws InvalidConfigurationException When Sundown parser was selected, but extension is not available
      */
-    public function load(array $configs , ContainerBuilder $container)
+    public function load(array $configs , ContainerBuilder $container): void
     {
         $configuration = new Configuration();
 
